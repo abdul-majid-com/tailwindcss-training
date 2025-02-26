@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <title>Basic Css</title>
     <link href="./css/main.css" rel="stylesheet">
+    <script src="js/alpine.js"></script>
 </head>
 <body>
+<div x-data="{ message: 'Hello, Alpine.js!' }">
+    <h1 x-text="message"></h1>
+</div>
 <!--Navbar-->
 <nav class="relative container p-6 mx-auto">
     <div class="flex items-center justify-between">
@@ -176,29 +180,29 @@
             </div>
             <!-- Logo -->
             <div>
-                <img src="img/logo-white.svg" class="h-8" alt="" />
+                <img src="img/logo-white.svg" class="h-8" alt=""/>
             </div>
             <!-- Social Links Container -->
             <div class="flex justify-center space-x-4">
                 <!-- Link 1 -->
                 <a href="#">
-                    <img src="img/icon-facebook.svg" alt="" class="h-8" />
+                    <img src="img/icon-facebook.svg" alt="" class="h-8"/>
                 </a>
                 <!-- Link 2 -->
                 <a href="#">
-                    <img src="img/icon-youtube.svg" alt="" class="h-8" />
+                    <img src="img/icon-youtube.svg" alt="" class="h-8"/>
                 </a>
                 <!-- Link 3 -->
                 <a href="#">
-                    <img src="img/icon-twitter.svg" alt="" class="h-8" />
+                    <img src="img/icon-twitter.svg" alt="" class="h-8"/>
                 </a>
                 <!-- Link 4 -->
                 <a href="#">
-                    <img src="img/icon-pinterest.svg" alt="" class="h-8" />
+                    <img src="img/icon-pinterest.svg" alt="" class="h-8"/>
                 </a>
                 <!-- Link 5 -->
                 <a href="#">
-                    <img src="img/icon-instagram.svg" alt="" class="h-8" />
+                    <img src="img/icon-instagram.svg" alt="" class="h-8"/>
                 </a>
             </div>
         </div>
@@ -221,7 +225,8 @@
         <div class="flex flex-col justify-between">
             <form>
                 <div class="flex space-x-3">
-                    <input type="text" class="border-2 text-white flex-1 px-4 rounded-full focus:outline-none" placeholder="Updated in your inbox"/>
+                    <input type="text" class="border-2 text-white flex-1 px-4 rounded-full focus:outline-none"
+                           placeholder="Updated in your inbox"/>
                     <button class="px-6 py-2 text-white rounded-full bg-red-600 hover:bg-red-400 focus:outline-none">
                         Go
                     </button>
