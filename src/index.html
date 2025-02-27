@@ -7,44 +7,51 @@
     <script src="js/alpine.js"></script>
 </head>
 <body>
-<div x-data="{ message: 'Hello, Alpine.js!' }">
-    <h1 x-text="message"></h1>
-</div>
 <!--Navbar-->
-<nav class="relative container p-6 mx-auto">
-    <div class="flex items-center justify-between">
-        <!--Logo-->
-        <div class="pt-2">
-            <img src="img/logo.svg" alt="">
+<nav class="container p-6 mx-auto">
+    <div x-data="{ isOpen: false }">
+        <div class="flex items-center justify-between">
+            <!--Logo-->
+            <div class="pt-2">
+                <img src="img/logo.svg" alt="">
+            </div>
+            <!--Menu Items -->
+            <div x-show="!isOpen" class="space-x-6 md:flex hidden">
+                <a href="#" class="hover:text-gray-500">Pricing</a>
+                <a href="#" class="hover:text-gray-500">Product</a>
+                <a href="#" class="hover:text-gray-500">About Us</a>
+                <a href="#" class="hover:text-gray-500">Careers</a>
+                <a href="#" class="hover:text-gray-500">Community</a>
+            </div>
+            <!--Button-->
+            <a href="#" class="hidden bg-red-400 rounded-full hover:bg-red-600 p-3 px-5 text-white md:block">Get Started</a>
+            <!--Hamburger Icon-->
+            <div class="flex md:hidden">
+                <button
+                        type="button"
+                        class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                        aria-label="toggle menu"
+                        @click="isOpen = !isOpen"
+                >
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                        <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <!--Hamburger Icon-->
         </div>
-        <!--Menu Items -->
-        <div class="hidden space-x-6 md:flex">
-            <a href="#" class="hover:text-gray-500">Pricing</a>
-            <a href="#" class="hover:text-gray-500">Product</a>
-            <a href="#" class="hover:text-gray-500">About Us</a>
-            <a href="#" class="hover:text-gray-500">Careers</a>
-            <a href="#" class="hover:text-gray-500">Community</a>
+        <div x-show="isOpen" class=" md:hidden">
+            <div id="menu" class="absolute flex flex-col items-center self-end py-8 mt-10 space-y-6
+                font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="#">Pricing</a>
+                <a href="#">Product</a>
+                <a href="#">About Us</a>
+                <a href="#">Careers</a>
+                <a href="#">Community</a>
+            </div>
         </div>
-        <!--Button-->
-        <a href="#" class="hidden bg-red-400 rounded-full hover:bg-red-600 p-3 px-5 text-white md:block">Get Started</a>
-        <!--Hamburger Icon-->
-        <button id="menu-btn" class="block hamburger focus:outline-none  md:hidden">
-            <span class="hamburger-top"></span>
-            <span class="hamburger-middle"></span>
-            <span class="hamburger-bottom"></span>
-        </button>
-        <!--Hamburger Icon-->
     </div>
-    <div class="md:hidden">
-        <div id="menu" class="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6
-         font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
-            <a href="#">Pricing</a>
-            <a href="#">Product</a>
-            <a href="#">About Us</a>
-            <a href="#">Careers</a>
-            <a href="#">Community</a>
-        </div>
-    </div>
+
 </nav>
 <!--Navbar ends-->
 
