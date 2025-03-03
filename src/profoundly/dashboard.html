@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="../js/alpine.js"></script>
+</head>
+<body>
+<nav class="w-full p-3 bg-gray-950">
+    <div x-data="{ isOpen: false }">
+        <div class="flex justify-between">
+            <!--Logo-->
+            <div class="pt-2 w-50 h-auto">
+                <img src="images/logo/FullLogo_Transparent_White.webp" alt="">
+            </div>
+            <!--Menu Items -->
+            <div x-show="!isOpen" class="space-x-6 md:flex hidden text-white">
+                <a href="./dashboard.html"
+                   class="hover:text-gray-500 inline-flex items-center rounded-md bg-gray-100 px-4 py-3 text-xs font-medium text-gray-600">
+                    Dashboard
+                </a>
+                <a href="#" class="hover:text-gray-500 mt-2">Jobs</a>
+                <a href="#" class="hover:text-gray-500 mt-2">My Profile</a>
+            </div>
+            <!--Profile Button-->
+            <div class="hidden md:block">
+                <div class="relative">
+                    <!-- dropdown trigger -->
+                    <a class="flex items-center "
+                       href="#">
+                        <!-- User avatar -->
+                        <img src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
+                             class="rounded-full w-12 h-12"/>
+                    </a>
+                    <!-- dropdown menu -->
+                    <ul class="absolute  right-4 overflow-hidden rounded-lg border-none bg-white text-left text-base shadow-lg">
+                        <!-- dropdown menu items -->
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700"
+                               href="#">My Profile</a>
+                        </li>
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700"
+                               href="#">Setup Stripe</a>
+                        </li>
+                        <li>
+                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700"
+                               href="#">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!--Hamburger Icon-->
+            <div class="flex md:hidden">
+                <button
+                        type="button"
+                        class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                        aria-label="toggle menu"
+                        @click="isOpen = !isOpen"
+                >
+                    <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current">
+                        <path fill-rule="evenodd"
+                              d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                    </svg>
+                </button>
+            </div>
+            <!--Hamburger Icon-->
+        </div>
+        <div x-show="isOpen" class=" md:hidden">
+            <div id="menu" class="absolute flex flex-col items-center self-end py-8 mt-10 space-y-6
+                font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="./dashboard.html">Dashboard</a>
+                <a href="#">Jobs</a>
+                <a href="#">My Profile</a>
+            </div>
+        </div>
+    </div>
+
+</nav>
+
+
+</body>
+</html>
