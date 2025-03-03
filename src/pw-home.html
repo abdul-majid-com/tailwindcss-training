@@ -4,21 +4,105 @@
     <meta charset="UTF-8">
     <title>PW Skills</title>
     <link rel="stylesheet" href="css/main.css">
+    <script defer src="js/alpine.js"></script>
 </head>
 <body class="bg-gray-900 mb-12">
-<nav class="w-full h-14 bg-indigo-300 flex justify-between">
+<!--Navbar-->
+
+<nav x-data="{ isOpen : true }" class=" w-full h-14 bg-indigo-300 flex justify-between px-4 md:px-5 items-center">
     <!--Logo-->
-    <div>PW Skills</div>
+    <div class="text-2xl  text-indigo-700 font-bold">PW Skills</div>
     <!--Links-->
-    <ul>
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Contact Us</li>
+    <ul x-show="isOpen" class="relative flex mt-45 flex-col bg-white
+    w-full text-center rounded-xl shadow-lg font-bold py-2
+    md:mt-0 md:w-full md:bg-transparent
+    md:flex-row md:black">
+        <li class="mx-[10px] cursor-pointer hover:text-indigo-400">Home</li>
+        <li class="mx-[10px] cursor-pointer hover:text-indigo-400">About Us</li>
+        <li class="mx-[10px] cursor-pointer hover:text-indigo-400">Contact Us</li>
     </ul>
     <!--Logout buttons-->
-    <div>Login/Signup</div>
+    <div class="hidden md:block  px-2 py-2 text-white font-bold cursor-pointer bg-indigo-700">Login/Signup</div>
+    <div @click=" isOpen = !isOpen " class="md:hidden">
+        <a class="text-4xl" href="#">&#8801;</a>
+    </div>
 </nav>
+<!--Navbar ends here-->
+
+<!--Hero Section-->
+<section class="w-full h-auto" id="hero">
+    <img class="w-full hidden md:block"
+         src="https://cdn.pwskills.com/assets/uploads/banners/63a18cca807628f5968f528a/web.jpg">
+    <img class="w-full md:hidden"
+         src="https://cdn.pwskills.com/assets/uploads/banners/63a18cca807628f5968f528a/mobile.jpg">
+</section>
 
 
+<!--Our students section-->
+<section id="our-student">
+    <div class="h-auto flex flex-wrap flex-col items-center text-center p-10">
+        <div class="w-full h-auto text-white flex flex-wrap flex-col items-center">
+            <p class="text-indigo-800 text-3xl font-bol md:text-4xl text-center">"Pure Hardwork, No Shortcut"</p>
+            <div class="w-36 h-1 border-b-4 border-yellow-400 mt-2 rounded-2xl md:mt-4 mb-12"></div>
+        </div>
+
+        <div class="w-full flex flex-wrap justify-evenly">
+            <div class="w-58 flex flex-col items-center mb-12">
+                <img class="w-42" src="img/icons/Icons-01.png">
+                <p class="text-2xl font-bold text-white md:text-md my-2">7,000+</p>
+                <p class="text-2xl font-bold text-gray-500 md:text-md">Enrolled Students</p>
+            </div>
+            <div class="w-58 flex flex-col items-center mb-12">
+                <img class="w-42" src="img/icons/Icons-02.png">
+                <p class="text-2xl font-bold text-white md:text-md my-2">300+</p>
+                <p class="text-2xl font-bold text-gray-500 md:text-md">Different Students</p>
+            </div>
+            <div class="w-60 flex flex-col items-center mb-12">
+                <img class="w-42" src="img/icons/Icons-03.png">
+                <p class="text-2xl font-bold text-white md:text-md my-2">10,000+</p>
+                <p class="text-2xl font-bold text-gray-500 md:text-md">Successful Transition</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="w-full bg-gray-950 px-4 text-white pt-8 flex flex-col md:flex-row flex-wrap justify-between md:px-12 md:py-14">
+    <div>
+        <img class="w-22 h-20" src="img/icons/Icons-04.png">
+        <p class="font-bold text-white py-6">Email us:test@test.com</p>
+    </div>
+    <div class="text-white">
+        <h2 class="font-bold text-xl mt-4">PW Skills</h2>
+        <div class="w-32 h-1 border-b-2 border-yellow-400 rounded-2xl my-2"></div>
+        <div>
+            <p>About us</p>
+            <p>FaQs</p>
+            <p>Privacy policy</p>
+        </div>
+    </div>
+
+    <div class="text-white">
+        <h2 class="font-bold text-xl mt-4">Products</h2>
+        <div class="w-32 h-1 border-b-2 border-yellow-400 rounded-2xl my-2"></div>
+        <div>
+            <p>Pw Skills Labs</p>
+            <p>Job Portals</p>
+            <p>Experience Portal</p>
+            <p>Become an affiliate</p>
+            <p>Hall of fame</p>
+        </div>
+    </div>
+
+    <div class="text-white">
+        <h2 class="font-bold text-xl mt-4">PW Skills</h2>
+        <div class="w-32 h-1 border-b-2 border-yellow-400 rounded-2xl my-2"></div>
+        <div>
+            <p>About us</p>
+            <p>FaQs</p>
+            <p>Privacy policy</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
