@@ -24,28 +24,28 @@
                 <a href="#" class="hover:text-gray-500 mt-2">My Profile</a>
             </div>
             <!--Profile Button-->
-            <div class="hidden md:block">
+            <div class="hidden md:block" x-data="{ profileMenuOpen: false }">
                 <div class="relative">
                     <!-- dropdown trigger -->
-                    <a class="flex items-center "
+                    <a @click="profileMenuOpen = !profileMenuOpen" class="flex items-center "
                        href="#">
                         <!-- User avatar -->
                         <img src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
                              class="rounded-full w-12 h-12"/>
                     </a>
                     <!-- dropdown menu -->
-                    <ul class="absolute  right-4 overflow-hidden rounded-lg border-none bg-white text-left text-base shadow-lg">
+                    <ul x-show="profileMenuOpen" @click.away="profileMenuOpen = false" class="absolute right-4 overflow-hidden rounded-lg border-none bg-white text-left text-base shadow-lg">
                         <!-- dropdown menu items -->
                         <li>
-                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700"
+                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-gray-300"
                                href="#">My Profile</a>
                         </li>
                         <li>
-                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700"
+                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-gray-300"
                                href="#">Setup Stripe</a>
                         </li>
                         <li>
-                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700"
+                            <a class="block w-full whitespace-nowrap bg-white px-4 py-2 text-sm font-normal text-neutral-700 hover:bg-gray-300"
                                href="#">Logout</a>
                         </li>
                     </ul>
